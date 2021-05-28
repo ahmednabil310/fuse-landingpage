@@ -1,0 +1,74 @@
+@include block(landing_page) {
+  color: white;
+  text-align: center;
+  background-image: url(../../assets/images/image-world_2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  @include xy-grid(vertical, true);
+  @include flex-align(start, middle);
+  @include element(logo) {
+    width: 200px;
+    padding: 1em 0;
+  }
+  @include element(info) {
+    font-size: 1.2em;
+    padding-bottom: 30px;
+    font-weight: 600;
+  }
+  @include element(cta) {
+    font-size: 1.2em;
+    padding-bottom: 30px;
+    font-weight: 600;
+  }
+}
+
+@include block(newsletter__form) {
+  position: relative;
+  @include xy-grid(horizontal, true);
+
+  @include block(title) {
+    position: absolute;
+    top: -1.5em;
+    font-weight: 500;
+  }
+
+  @include element(button) {
+    background-color: white;
+    color: #ff019f;
+    height: 45px;
+    padding: 10px 20px;
+    margin-left: 0.5em;
+    border-radius: 10px;
+    transition: all ease-in-out 0.3s;
+
+    &:disabled {
+      color: white;
+      background-color: black;
+    }
+  }
+
+  @include element(input) {
+    max-width: 299px;
+    height: 45px;
+    border-radius: 10px;
+    border: solid 1.5px rgba(151, 151, 151, 0.35);
+    background-color: #ffffff;
+    color: #052235;
+    padding: 10px 15px;
+
+    &::placeholder {
+      color: black;
+    }
+
+    &:focus {
+      border: 1.5px solid #ccd9e0;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}
